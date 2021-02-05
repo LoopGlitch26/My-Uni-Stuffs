@@ -1,2 +1,2 @@
 # My-Uni-Stuffs
-All my assignments, projects, etc. related to my University semester wise
+All my notes, assignments, projects, etc. related to my University semester wise
