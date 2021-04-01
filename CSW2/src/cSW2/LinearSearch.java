@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class LinearSearch {
 	
+	// Unsorted elements
 	public int UnsortedLinearSearch(int[] A, int data) {
 		for (int i = 0; i < A.length; i++) { // Time complexity of worst case is O(n) because in worst case we need to scan the complete array
 			if (A[i] == data)
@@ -12,6 +13,7 @@ public class LinearSearch {
 		return -1;
 	}
 	
+	// Sorted elements
 /*	public int SortedLinearSearch(int[] A, int data) {
 		for (int i = 0; i < A.length; i++) { // Time complexity of worst case is O(n) because in worst case we need to scan the complete array
 			if (A[i] == data)
