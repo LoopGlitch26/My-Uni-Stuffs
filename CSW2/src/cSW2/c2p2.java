@@ -237,7 +237,7 @@ public class c2p2 {
 		      		      
 		      System.out.println("The number "+g+" after unsetting or clearing bit in " +h+"'th position, is : "+ ob.clearBit(i, j));
 		      
-              System.out.println("Enter the number and position respectively to check bit : ");
+		      System.out.println("Enter the number and position respectively to check bit : ");
 		      
 		      int q = sc.nextInt();
 		      int w = sc.nextInt();
