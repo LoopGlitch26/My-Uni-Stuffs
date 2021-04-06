@@ -42,16 +42,16 @@ public class c2p2 {
 		 * 
 		 * 2:   0010
 		 * 1's: 1101
-		 * 	   +0001
-		 * 		----
-		 * 		1110
+		 *     +0001
+		 *      ----
+		 *      1110
 		 * 
 		 * So 3 ^ -2 will be :
 		 * 
-		 * 		0011
-		 * 	   ^1110
-		 * 		----
-		 * 		1111  
+		 *      0011
+		 *     ^1110
+		 *      ----
+		 *      1111  
 		 * 
 		 * 1111 is negative (<0) because the sign bit is 1
 		 * 
@@ -59,9 +59,9 @@ public class c2p2 {
 		 * 
 		 * In binary, 3 is 0011, and 2 is 0010
 		 * 
-		 * 	0011
+		 *  0011
 		 * ^0010
-		 * 	----
+		 *  ----
 		 *  0011
 		 *  
 		 *  0011 is positive (>=0) because the sign bit is 0
@@ -154,6 +154,42 @@ public class c2p2 {
 			System.out.println("No, the number is not a power of 2");
 	}
 	
+	public int setBit(int x, int n) {
+		
+		/*
+		 * Bit operation explanation:
+		 * 
+		 * OR operator sets each bit as 1 if one of the operand's corresponding bit is set 1
+		 * 
+		 * So to shift 1 to n'th bit of x, (x | (1<<n))
+		 * 
+		 */
+		
+		return(x | (1 << n));
+	}
+	
+	public int clearBit(int x, int n) {
+		/*
+		 * Bit operation explanation:
+		 * 
+		 * AND operator with any bit with negation of set bit will be 0
+		 * 
+		 * So to clear 1 to n'th bit of x, (x & ~(1<<n))
+		 * 
+		 */
+		
+		return(x & ~(1<<n));
+	}
+	
+	public void checkSet(int x, int n) {
+		
+		if ((x & (1<<n)) > 0)  // shifting 1 to n'th position and checking with n'th bit
+			  System.out.println("Bit is set");
+		else 
+			  System.out.println("Bit is not set");
+		
+	}
+	
 	public static void main(String[] args) {
 		
 		  Scanner sc = new Scanner(System.in);
@@ -186,6 +222,27 @@ public class c2p2 {
 		      int p = sc.nextInt();
 		      
 		      ob.checkPow2(p);
+		      
+		      System.out.println("Enter the number and position respectively for setting bit : ");
+		      
+		      int i = sc.nextInt();
+		      int j = sc.nextInt();
+		      		      
+		      System.out.println("The number "+i+" after setting bit in " +j+"'th position, is : "+ ob.setBit(i, j));
+		      
+		      System.out.println("Enter the number and position respectively for clearing bit : ");
+		      
+		      int g = sc.nextInt();
+		      int h = sc.nextInt();
+		      		      
+		      System.out.println("The number "+g+" after unsetting or clearing bit in " +h+"'th position, is : "+ ob.clearBit(i, j));
+		      
+              System.out.println("Enter the number and position respectively to check bit : ");
+		      
+		      int q = sc.nextInt();
+		      int w = sc.nextInt();
+		      
+		      ob.checkSet(q, w);
 		      
 		  }
 		  
